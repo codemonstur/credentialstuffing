@@ -21,7 +21,7 @@ public enum Main {;
         public File list;
     }
 
-    public static void main(final String... args) throws InvalidCommandLine {
+    public static void main(final String... args) throws InvalidCommandLine, IOException {
         final CliArguments arguments = newCliParser(CliArguments::new)
             .onErrorPrintHelpAndExit()
             .onHelpPrintHelpAndExit()
@@ -32,7 +32,7 @@ public enum Main {;
 
     private static void execute(final CliArguments arguments) throws IOException {
         if (arguments.list == null || !arguments.list.exists())
-            throw new IOException("Missing credentials list. Please create ")
+            throw new IOException("Missing credentials list. Please create ");
         Files.readString(arguments.list.toPath());
     }
 
