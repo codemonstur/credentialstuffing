@@ -11,9 +11,11 @@ public enum Services {;
         boolean login(String username, String password) throws IOException;
     }
 
+    // Only ones that work right now. All sites should be possible to implement in theory. In practice it can
+    // be quite some work because these sites have so much garbage and obfuscation in them. I've done what I felt
+    // like doing so far. Feel free to help out implementing more.
     public static List<Service> services() {
-        return List.of(Amazon::login, Dropbox::login, Facebook::login, GitHub::login, Instagram::login,
-            LinkedIn::login, Pinterest::login, Reddit::login, TikTok::login, Twitter::login, YouTube::login);
+        return List.of(Admiral::login, AirAsia::login, AmiAmi::login, Anthem::login);
     }
 
 }
